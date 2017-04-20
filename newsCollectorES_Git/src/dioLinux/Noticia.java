@@ -1,4 +1,4 @@
-
+package dioLinux;
 public class Noticia {
 
 	String link;
