@@ -10,17 +10,19 @@ import java.util.ArrayList;
 /**
  * Created by gabriel and marquinhos on 15/04/17.
  */
-public class MineradorDioLinux{
- private Document d;
- private ArrayList<Noticia> listaDeNoticiasFinais;
- 
- public MineradorDioLinux(){
-	 listaDeNoticiasFinais = new ArrayList<Noticia>();
- }
+public class MineradorDioLinux {
 
-	public void conectaDioLinux() throws IOException {
+    private Document d;
+    private ArrayList<Noticia> listaDeNoticiasFinais;
+
+    public MineradorDioLinux() {
+        listaDeNoticiasFinais = new ArrayList<Noticia>();
+    }
+
+    public void conectaDioLinux() throws IOException {
         d = Jsoup.connect("http://www.diolinux.com.br/").get();
     }
+
     public String processaDados() {
         listaDeNoticiasFinais.clear();
         Elements listaNoticiasDesordenadaTextoCompleto = d.select("div.item-title a ");
@@ -36,16 +38,14 @@ public class MineradorDioLinux{
                     noticiaShortText = noticiaMancheteCompleta.text();
                 }
             }
-            Noticia n = new Noticia(link,noticiaShortText);
+            Noticia n = new Noticia(link, noticiaShortText);
             listaDeNoticiasFinais.add(n);
             txt += noticiaShortText + "\n" + link + "\n\n";
         }
         return txt;
     }
-    
+
     public ArrayList<Noticia> getListaDeNoticias() {
-    	return listaDeNoticiasFinais;
+        return listaDeNoticiasFinais;
     }
 }
-
-

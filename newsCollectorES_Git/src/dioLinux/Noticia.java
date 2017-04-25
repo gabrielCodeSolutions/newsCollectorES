@@ -17,4 +17,11 @@ public class Noticia {
 		return manchete;
 	}
 
+    @Override
+    public String toString() {
+        return manchete+"\n"+link+"\n";
+    }
+        
+        
+
 }
