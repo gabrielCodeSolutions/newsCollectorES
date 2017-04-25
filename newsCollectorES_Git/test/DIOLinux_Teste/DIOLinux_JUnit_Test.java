@@ -49,7 +49,19 @@ public class DIOLinux_JUnit_Test {
     Aqui serão verificados se as manchetes e os links derivados das notícias do
     site foram coletadas de maneira correta.
     */
-
+    
+    @Test
+    public void testeDIOCollector0(){
+        
+        String manchete = "Como testar novos recursos no Firefox antes de todos!";
+        String link= "http://www.diolinux.com.br/2017/04/como-testar-novos-recursos-no-firefox.html";
+        Noticia noticia = new Noticia(link,manchete);
+        // Teste de coleta da manchete e link
+        System.out.println(mineradorDioLinux.getListaDeNoticias().get(0).getManchete());
+        assertTrue(this.compararNoticia(noticia));
+                
+    }
+    
     @Test
     public void testeDIOCollector1(){
         
