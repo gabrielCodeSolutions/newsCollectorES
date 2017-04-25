@@ -1,16 +1,22 @@
-package DIOLinux_Teste;
-
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package BRLinux_Teste;
 
-import dioLinux.Noticia;
-import dioLinux.MineradorDioLinux;
+// Imports com erros até a finalização do script para o site
+// BR Linux
+
+import BRLinux.Noticia;
+import BRLinux.MineradorDioLinux;
 import java.io.IOException;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,14 +26,16 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Efraim
+ * @author Efraim - 1152123138
+ * Created: 25/04/2017 - 15:37
+ * Last Modified: 25/04/2017 - 15:40
+ * 
  */
-public class DIOLinux_JUnit_Test {
+public class BRLinux_JUnit_Test {
     
-    MineradorDioLinux mineradorDioLinux;
+    MineradorBRLinux mineradorBRLinux;
     
-    public DIOLinux_JUnit_Test() {
-        
+    public BRLinux_JUnit_Test() {
     }
     
     @BeforeClass
@@ -40,28 +48,20 @@ public class DIOLinux_JUnit_Test {
     
     @Before
     public void setUp() throws IOException {
-        mineradorDioLinux = new MineradorDioLinux();
-        mineradorDioLinux.conectaDioLinux();
-        mineradorDioLinux.processaDados();
+        mineradorBRLinux = new MineradorBRLinux();
+        mineradorBRLinux.conectaBRLinux();
+        mineradorBRLinux.processaDados();
     }
     
-    /* Início dos testes de processamento de dados respectivo ao site DIO Linux.
+    /* ATENÇÃO: ESTE TESTE FOI DESENVOLVIDO PREVIAMENTE AO SCRIPT QUE TESTA, 
+    SENDO ASSIM, MÉTODOS, 'IMPORTS' E VARIÁVEIS PODEM NECESSITAR DE ALTERAÇÕES
+    PARA FUNCIONAR CORRETAMENTE.
+    
+        Início dos testes de processamento de dados respectivo ao site BR Linux.
     Aqui serão verificados se as manchetes e os links derivados das notícias do
     site foram coletadas de maneira correta.
     */
-    
-    @Test
-    public void testeDIOCollector0(){
-        
-        String manchete = "Como testar novos recursos no Firefox antes de todos!";
-        String link= "http://www.diolinux.com.br/2017/04/como-testar-novos-recursos-no-firefox.html";
-        Noticia noticia = new Noticia(link,manchete);
-        // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(0).getManchete());
-        assertTrue(this.compararNoticia(noticia));
-                
-    }
-    
+
     @Test
     public void testeDIOCollector1(){
         
@@ -69,7 +69,7 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/united-o-tema-unity-ubuntu-para-kde-plasma.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(4).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(4).getManchete());
         assertTrue(this.compararNoticia(noticia));
                 
     }
@@ -80,7 +80,7 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/como-fazer-o-google-chrome-reconhecerem-emojis.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(1).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(1).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
@@ -90,7 +90,7 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/agricultores-querem-fazer-root-em-tratores.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(2).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(2).getManchete());
         assertTrue(this.compararNoticia(noticia));;
     }
     
@@ -100,7 +100,7 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/deepin-154-download-rapido.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(3).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(3).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
@@ -110,7 +110,7 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/como-criar-e-embutir-legendas-em-videos-no-linux.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(5).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(5).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
@@ -120,7 +120,7 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/anbox-app-android-linux-desktop.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(6).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(6).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
@@ -130,14 +130,14 @@ public class DIOLinux_JUnit_Test {
         String link= "http://www.diolinux.com.br/2017/04/ubuntu-1704-download-torrent.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorDioLinux.getListaDeNoticias().get(7).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticias().get(7).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
     // Método utilizado para procurar uma dada noticia num ArrayList.
     public boolean compararNoticia(Noticia noticia){
-        for (int i=0;i<=mineradorDioLinux.getListaDeNoticias().size();i++){
-            if (noticia.getManchete().equals(mineradorDioLinux.getListaDeNoticias().get(i).getManchete())|| noticia.getLink().equals(mineradorDioLinux.getListaDeNoticias().get(i).getLink())){
+        for (int i=0;i<=mineradorBRLinux.getListaDeNoticias().size();i++){
+            if (noticia.getManchete().equals(mineradorBRLinux.getListaDeNoticias().get(i).getManchete())|| noticia.getLink().equals(mineradorBRLinux.getListaDeNoticias().get(i).getLink())){
                 return true;
             } 
         }
