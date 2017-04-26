@@ -8,8 +8,8 @@ package BRLinux_Teste;
 // Imports com erros até a finalização do script para o site
 // BR Linux
 
-import BRLinux.Noticia;
-import BRLinux.MineradorDioLinux;
+import model.Noticia;
+import brLinux.MineradorBRLinux;
 import java.io.IOException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -49,7 +49,7 @@ public class BRLinux_JUnit_Test {
     @Before
     public void setUp() throws IOException {
         mineradorBRLinux = new MineradorBRLinux();
-        mineradorBRLinux.conectaBRLinux();
+        mineradorBRLinux.conectaBrLinux();
         mineradorBRLinux.processaDados();
     }
     
@@ -63,81 +63,81 @@ public class BRLinux_JUnit_Test {
     */
 
     @Test
-    public void testeDIOCollector1(){
+    public void testeBRCollector1(){
         
-        String manchete = "United - O tema para KDE Plasma que transforma a sua interface no Unity";
-        String link= "http://www.diolinux.com.br/2017/04/united-o-tema-unity-ubuntu-para-kde-plasma.html";
+        String manchete = "Evolução histórica do Ubuntu Destkop";
+        String link= "http://br-linux.org/2017/01/evolucao-historica-do-ubuntu-destkop.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(4).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(0).getManchete());
         assertTrue(this.compararNoticia(noticia));
                 
     }
     
     @Test
-    public void testeDIOCollector2(){
-        String manchete = "Como fazer o Google Chrome e o Firefox reconhecerem todos os Emojis";
-        String link= "http://www.diolinux.com.br/2017/04/como-fazer-o-google-chrome-reconhecerem-emojis.html";
+    public void testeBRCollector2(){
+        String manchete = "Filebeat – enviando logs para o Elasticsearch";
+        String link= "http://br-linux.org/2017/01/filebeat-enviando-logs-para-o-elasticsearch.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(1).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(1).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
     @Test
-    public void testeDIOCollector3(){
-        String manchete = "Agricultores querem \"fazer root\" em tratores da John Deere";
-        String link= "http://www.diolinux.com.br/2017/04/agricultores-querem-fazer-root-em-tratores.html";
+    public void testeBRCollector3(){
+        String manchete = "Café com Linux - Analisando o Endless O.S";
+        String link= "http://br-linux.org/2017/01/cafe-com-linux-analisando-o-endless-os.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(2).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(2).getManchete());
         assertTrue(this.compararNoticia(noticia));;
     }
     
     @Test
-    public void testeDIOCollector4(){
-        String manchete = "Lançado Deepin 15.4 para provar que Linux não é difícil de uma vez por todas";
-        String link= "http://www.diolinux.com.br/2017/04/deepin-154-download-rapido.html";
+    public void testeBRCollector4(){
+        String manchete = "Entendendo Algoritmos, um guia ilustrado para programadores e outros curiosos";
+        String link= "http://br-linux.org/2017/01/entendendo-algoritmos-um-guia-ilustrado-para-programadores-e-outros-curiosos.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(3).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(3).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
     @Test
-    public void testeDIOCollector5(){
-        String manchete = "Como criar e embutir legendas em vídeos usando Linux";
-        String link= "http://www.diolinux.com.br/2017/04/como-criar-e-embutir-legendas-em-videos-no-linux.html";
+    public void testeBRCollector5(){
+        String manchete = "Meia-volta: agora Libreboot quer voltar a fazer parte do GNU";
+        String link= "http://br-linux.org/2017/01/meia-volta-agora-libreboot-quer-voltar-a-fazer-parte-do-gnu.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(5).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(4).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
     @Test
-    public void testeDIOCollector6(){
-        String manchete = "Anbox - O projeto que quer integrar Apps de Android nas distros Linux de Desktop";
-        String link= "http://www.diolinux.com.br/2017/04/anbox-app-android-linux-desktop.html";
+    public void testeBRCollector6(){
+        String manchete = "Profile e rc: Entendendo os arquivos de inicialização do Bash e as diferenças entre eles";
+        String link= "http://br-linux.org/2017/01/profile-e-rc-entendendo-os-arquivos-de-inicializacao-do-bash-e-as-diferencas-entre-eles.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(6).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(5).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
     @Test
-    public void testeDIOCollector7(){
-        String manchete = "Lançado Ubuntu 17.04 Zesty Zapus, confira as novidades faça o download!";
-        String link= "http://www.diolinux.com.br/2017/04/ubuntu-1704-download-torrent.html";
+    public void testeBRCollector7(){
+        String manchete = "System76: Fase 3, ativar - design aplicado a computadores vendidos com Linux instalado";
+        String link= "http://br-linux.org/2017/01/system76-fase-3-ativar-design-aplicado-a-computadores-vendidos-com-linux-instalado.html";
         Noticia noticia = new Noticia(link,manchete);
         // Teste de coleta da manchete e link
-        System.out.println(mineradorBRLinux.getListaDeNoticias().get(7).getManchete());
+        System.out.println(mineradorBRLinux.getListaDeNoticiasFinais().get(6).getManchete());
         assertTrue(this.compararNoticia(noticia));
     }
     
     // Método utilizado para procurar uma dada noticia num ArrayList.
     public boolean compararNoticia(Noticia noticia){
-        for (int i=0;i<=mineradorBRLinux.getListaDeNoticias().size();i++){
-            if (noticia.getManchete().equals(mineradorBRLinux.getListaDeNoticias().get(i).getManchete())|| noticia.getLink().equals(mineradorBRLinux.getListaDeNoticias().get(i).getLink())){
+        for (int i=0;i<=mineradorBRLinux.getListaDeNoticiasFinais().size();i++){
+            if (noticia.getManchete().equals(mineradorBRLinux.getListaDeNoticiasFinais().get(i).getManchete())|| noticia.getLink().equals(mineradorBRLinux.getListaDeNoticiasFinais().get(i).getLink())){
                 return true;
             } 
         }

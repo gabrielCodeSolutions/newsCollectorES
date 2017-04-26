@@ -1,4 +1,4 @@
-package dioLinux;
+package model;
 public class Noticia {
 
 	String link;

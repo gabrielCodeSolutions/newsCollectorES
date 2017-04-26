@@ -8,7 +8,7 @@ package DIOLinux_Teste;
  * and open the template in the editor.
  */
 
-import dioLinux.Noticia;
+import model.Noticia;
 import dioLinux.MineradorDioLinux;
 import java.io.IOException;
 import org.junit.After;

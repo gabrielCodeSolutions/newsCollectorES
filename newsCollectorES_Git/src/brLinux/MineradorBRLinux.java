@@ -9,7 +9,7 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-import dioLinux.Noticia;
+import model.Noticia;
 import java.util.ArrayList;
 
 /**
